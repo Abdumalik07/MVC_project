@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Company</title>
+    <style media="screen">
+        .input-container input {
+            border: none;
+            box-sizing: content-box;
+            outline: 0;
+            padding: 10rem;
+            width: 0%;
+        }
+        body {
+            background-image: url("https://i.pinimg.com/originals/b8/b9/a2/b8b9a2f0d10e9c0a105c3c3c3ec93a23.jpg");
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{/companies/{id}/updateCompany (id = ${company.getId()})}"
+      th:object="${company}"
+      th:method="patch"
+      style="text-align:center; margin-top:90px; font-size: 15px;">
+    <div><input th:field="*{companyName}"></div>
+    <br>
+    <div><input th:field="*{locatedCountry}"></div>
+    <br>
+    <div><input type="submit" value="update"></div>
+</form>
+</body>
+</html>
